@@ -1,11 +1,11 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { Header } from './components/Header';
-import { ArticleList } from './pages/ArticleList';
-import { ArticleDetail } from './pages/ArticleDetail';
+import { ArticleList } from "./pages/ArticleList";
+import { ArticleDetail } from "./pages/ArticleDetail";
 import './App.css';
-import { Contact } from './pages/Contact';
+import { Contact } from "./pages/Contact";
 
-const App:React.FC =() => {
+const App: React.FC = () => {
   return (
     <div>
       <Header />
