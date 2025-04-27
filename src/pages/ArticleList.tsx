@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import classes from '../css/ArticleList.module.css';
 import { Link } from 'react-router-dom';
+import { Post } from '../types/Post';
 
 export const ArticleList = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetcher = async () => {
@@ -14,7 +15,7 @@ export const ArticleList = () => {
         if (!res.ok) throw new Error("記事の取得に失敗しました")
         const data = await res.json();
         setPosts(data.posts)
-      } catch (error) {
+      } catch (error:any) {
         setError(error.message);
       } finally {
         setLoading(false);
